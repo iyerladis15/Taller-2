@@ -1,1 +1,85 @@
-<p>{{factura}}</p>
+<html>
+<head>
+
+</head>
+<body>
+<style>
+
+    body {
+        font-family: arial;
+        font-size: 1rem;
+
+    }
+
+    div {
+        margin: auto auto;
+        text-align: center;
+
+    }
+
+    .areas {
+        margin: 5px 5px;
+
+    }
+
+    input {
+        padding: 10px;
+        display: inline-block;
+
+        width: 300px;
+
+    }
+
+    button {
+        padding: 10px;
+
+        border: none;
+        border-radius: 4px;
+
+    }
+
+    .button-green {
+        background-color: darkgreen;
+        color: white;
+
+    }
+
+    .button-green:hover {
+        background-color: green;
+
+    }
+
+    .button-red {
+        background-color: darkred;
+        color: white;
+
+    }
+
+    .button-red:hover {
+        background-color: red;
+
+    }
+
+</style>
+
+<div>
+    <div class="areas">
+    <h1>TUS FACTURAS</h1>
+    </div>
+
+    <div class="areas">
+    <p *ngFor="let factura of facturas">FACTURA N# {{factura}}</p>
+    </div>
+
+    <div class="areas">
+    <input #cajaFactura type="text" placeholder="AÑADA UNA FACTURA O ITEM AQUÍ">
+    </div>
+
+    <div>
+    <button class="button-green" (click)='anadirFactura(cajaFactura.value)'>AÑADIR FACTURA</button>
+    <button class="button-red" (click)='removerFactura()'>ELIMINAR ULTIMA FACTURA</button>
+    </div>
+</div>
+
+</body>
+</html>
