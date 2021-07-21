@@ -69,15 +69,17 @@
 
     <div class="areas">
     <p *ngFor="let factura of facturas">FACTURA N# {{factura}}</p>
+    <p *ngFor="let item of items"> ITEM: {{item}}</p>
     </div>
 
     <div class="areas">
     <input #cajaFactura type="text" placeholder="AÑADA UNA FACTURA O ITEM AQUÍ">
+    <select #itensitos>  <option >factura</option> <option>item</option></select>
     </div>
 
     <div>
-    <button class="button-green" (click)='anadirFactura(cajaFactura.value)'>AÑADIR FACTURA</button>
-    <button class="button-red" (click)='removerFactura()'>ELIMINAR ULTIMA FACTURA</button>
+    <button class="button-green" (click)='anadirFactura(cajaFactura.value,itensitos.value)'>AÑADIR FACTURA</button>
+    <button class="button-red" (click)='removerFactura(itensitos.value)'>ELIMINAR ULTIMA FACTURA</button>
     </div>
 </div>
 
